@@ -8,131 +8,35 @@
     <h1>You are tyring to reach a protected local server.</h1>
     <h2>Please sign in to proceed.</h2>
     <input type="text" id="directory" value="Username">
-    <input type="password" id="directory" value="Password">
+    <input type="password" id="password" value="">
     <button onclick="myFunction()">Try it</button>
+    <p id="output"></p>
+    <p id="outputpass"></p>
+    <p id="main-output"></p>
     <script>
     var line_1 = 0;
-    var error_1 = 0;
-    var error_2 = 0;
-    var error_3 = 0;
-    var error_4 = 0;
-    var check = 0;
+    var line_2 = 0;
     var output = 0;
-    var show = 0;
-    var output_with_info = 0;
-    var define = 0;
-    var d = 0;
-    var line_16 = 0;
-    var line_17 = 0;
-    var line_18 = 0;
-    var line_19 = 0;
-    var line_20 = 0;
-    var error = 0;
     function myFunction() {
         //collects all the information
         var line_1 = document.getElementById("directory").value;
         //checks for errors in line_1 (directory)
-        if (line_1 /*=== "/" || "/test" || "/delete"*/!== "/command"){
-          document.getElementById("error").innerHTML = "ERROR: " + line_1 + " not defined, not a valid command.";
-          error = error + 1;
+        if (line_1 == "IdeaTechStaff"){
+          document.getElementById("output").innerHTML = "Correct Username";
+          var output = output + 1;
         }
-        //if there is no error prints line_1
-        if (error === 0){
-          document.getElementById("output_1").innerHTML = line_1 + " | command defined, command applied.";
-          check = check + 1;
+        //collects all the information
+        var line_2 = document.getElementById("password").value;
+        //checks for errors in line_2 (pass)
+        if (line_2 == "idealoginstaff"){
+          document.getElementById("outputpass").innerHTML = "Correct Password";
+          var output = output + 1;
         }
-        //checks for errors in line_2 (main-command)
-        if (line_2 /*=== "_website" || "_name" || "_command"*/!== "_code"){
-          document.getElementById("error").innerHTML = "ERROR: " + line_2 + " not defined, not a valid command.";
-          error = error + 1;
-        }
-        //if there is no error prints line_2
-        if (error === 0){
-          document.getElementById("output_2").innerHTML = line_2 + " | command defined, command applied.";
-          check = check + 1;
-        }
-        //checks for errors in line_3 (command)
-        //needs work
-        /*if (line_3 /*=== "-%test" || "-%name" || "_command"!== "-%print"){
-          document.getElementById("error").innerHTML = "ERROR: " + line_3 + " not defined, not a valid command.";
-          error = error + 1;
-        }*/
-        //if there is no error prints line_3
-        if (error === 0){
-          document.getElementById("output_3").innerHTML = line_3 + " | command defined, command applied.";
-          check = check + 1;
-        }
-        //checks for errors in line_4 (title)
-        //needs work
-        /*if (line_4 /*=== "-%test" || "-%name" || "_command"!== "?text"){
-          document.getElementById("error").innerHTML = "ERROR: " + line_4 + " not defined, not a valid command.";
-          error = error + 1;
-        }*/
-        //if there is no error prints line_4
-        if (error === 0){
-          document.getElementById("output_4").innerHTML = line_4 + " | command defined, command applied.";
-          check = check + 1;
-        }
-        //checks for errors in line_5 (info)
-        /*if (line_5 === "-%test" || "-%name" || "_command"!== "-?info"){
-          document.getElementById("error").innerHTML = "ERROR: " + line_5 + " not defined, not a valid command.";
-          error = error + 1;
-        }*/
-        //if there is no error prints line_5
-        if (error === 0){
-          document.getElementById("output_5").innerHTML = line_5 + " | info applied.";
-          check = check + 1;
-        }
-        //checks if all parts are correct
-        if (check === 5){
-          document.getElementById("output_6").innerHTML = line_1 + line_2 + line_3 + line_4 + "!" + line_5;
-          var output = line_1 + line_2 + line_3 + line_4;
-          var output_with_info = line_1 + line_2 + line_3 + line_4 + "!" + line_5;
-        }
-        //shows the main output
-        //print commands
-        //?info
-        if (output === "/command_code-%print?info"){
-          document.getElementById("main-output").innerHTML = line_5;
-        }
-        //?name
-        if (output === "/command_code-%print?name"){
-          document.getElementById("main-output").innerHTML = "Hello, " + line_5;
-        }
-        //variable commands
-        //new
-        if (output === "/command_code-%var?new"){
-          document.getElementById("main-output").innerHTML = "--Variable " + line_5 + " created--";
-          var var_1 = line_5;
-        }
-        //print
-        if (output === "/command_code-%var?print"){
-          document.getElementById("main-output").innerHTML = "--Variable " + line_5 + ": " + var_1;
-        }
-        //add
-        if (output === "/command_code-%var?add"){
-          var_1 = var_1 + line_5;
-          document.getElementById("main-output").innerHTML = "--Variable " + line_5 + ": " + var_1;
-        }
-        //define commands
-        if (output === "/command_code-%define?info"){
-          define = line_5;
-          document.getElementById("main-output").innerHTML = "--Info '" + line_5 + "' is now defined";
-        }
-        //import commands
-        //plug-in (spreadsheet)
-        if (output_with_info === "/command_code-%import?plug-in!spreadsheet"){
-          document.getElementById("main-output").innerHTML = "--Please change the '/copy-of-computer-ipad-1' part in the search bar to '/spreadsheet' or refresh to cancel--";
-        }
-        //time
-        if (output_with_info === "/command_code-%import?time!current"){
-          var d = new Date();
-          document.getElementById("main-output").innerHTML = d.toString();
+        //Print
+        if (output === "2"){
+          document.getElementById("main-output").innerHTML = "<a href="">Correct Login - Permission to proceed</a>";
         }
     }
     </script>
-    <ul>
-      <li>You Have 1 homework to download! Tudor Times(Queen Elizabeth Obituary HOMEWORK due in 23/11/17): Download Shortly</li>
-    </ul>
   </body>
 </html>
