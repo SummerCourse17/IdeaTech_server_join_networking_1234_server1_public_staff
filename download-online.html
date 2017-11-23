@@ -16,26 +16,20 @@
     <script>
     var line_1 = 0;
     var line_2 = 0;
-    var output = 0;
     function myFunction() {
         //collects all the information
         var line_1 = document.getElementById("directory").value;
         //checks for errors in line_1 (directory)
         if (line_1 == "IdeaTechStaff"){
           document.getElementById("output").innerHTML = "Correct Username";
-          var output = output + 1;
+          var line_2 = document.getElementById("password").value;
+          //checks for errors in line_2 (pass)
+          if (line_2 == "idealoginstaff"){
+            document.getElementById("outputpass").innerHTML = "Correct Password";
+            document.getElementById("main-output").innerHTML = "<a href="">Correct Login - Permission to proceed</a>";
+          }
         }
-        //collects all the information
-        var line_2 = document.getElementById("password").value;
-        //checks for errors in line_2 (pass)
-        if (line_2 == "idealoginstaff"){
-          document.getElementById("outputpass").innerHTML = "Correct Password";
-          var output = output + 1;
-        }
-        //Print
-        if (output === "2"){
           document.getElementById("main-output").innerHTML = "<a href="">Correct Login - Permission to proceed</a>";
-        }
     }
     </script>
   </body>
